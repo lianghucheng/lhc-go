@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func timeParse(){
+func TimeParse(){
 	const longForm = "Jan 2 2006 at 3:04pm (MST)"
 	t,_:=time.Parse(longForm,"Jun 21 2017 at 0:00am (PST)")
 	fmt.Println(t)
