@@ -7,7 +7,7 @@ import (
 
 //todo:还有时间格式转换的使用
 func main(){
-	log.SetFlags(log.Lshortfile|log.Ltime)
+	log.SetFlags(log.Ltime|log.Llongfile)
 
 	t:=time.Now().UTC().Format("20060102 15:04:05 -07")
 	log.Println(t)
