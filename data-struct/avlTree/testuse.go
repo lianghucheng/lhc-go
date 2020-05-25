@@ -38,21 +38,3 @@ func toTestLL(args []int) *avlTree {
 
 	return rt
 }
-
-func (ctx *avlTree)insert(node **avlTreeNode,data int){
-	if *node == nil {
-		*node = new(avlTreeNode)
-		(*node).data = data
-		return
-	}
-
-	if (*node).data > data {
-		ctx.insert(&(*node).left,data)
-	} else if (*node).data < data{
-		ctx.insert(&(*node).right,data)
-	} else {
-		(*node).freq++
-	}
-
-	(*node).height = ctx.max(ctx.getNodeHeight((*node).left), ctx.getNodeHeight((*node).right)) + 1
-}

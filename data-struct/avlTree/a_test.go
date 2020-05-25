@@ -184,7 +184,6 @@ func TestAvlTree_DoubleRotateRL(t *testing.T) {
 	at := toTestLL(rlTest2)
 	fmt.Println("before")
 	at.show(at.root)
-	at.DoubleRotateRL(&at.root)
-	fmt.Println("after")
-	at.show(at.root)
+
+
 }
