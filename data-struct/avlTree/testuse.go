@@ -29,7 +29,7 @@ package main
 					|-----6(1)
  */
 
-func toTestLL(args []int) *avlTree {
+func toTestAvlTree(args []int) *avlTree {
 	rt := new(avlTree)
 
 	for _, v := range args {

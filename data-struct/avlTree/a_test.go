@@ -15,12 +15,12 @@ var rlTest1 = []int{10,5,20,17,23,16}
 var rlTest2 = []int{10,5,20,17,23,18}
 
 func TestShow(t *testing.T) {
-	aT := toTestLL(llTest2)
+	aT := toTestAvlTree(llTest2)
 	aT.root.show(0)
 }
 
 func TestShow2(t *testing.T) {
-	at := toTestLL(llTest2)
+	at := toTestAvlTree(llTest2)
 	at.show2()
 }
 
@@ -58,7 +58,7 @@ func TestShow2(t *testing.T) {
 |-----------------------------20(freq:0,heigh:0)
  */
 func TestAvlTree_SingleRotateLeft(t *testing.T) {
-	at := toTestLL(llTest2)
+	at := toTestAvlTree(llTest2)
 	fmt.Println("before")
 	at.show(at.root)
 	at.SingleRotateLeft(&at.root)
@@ -99,7 +99,7 @@ func TestAvlTree_SingleRotateLeft(t *testing.T) {
 |-----------------------------26(freq:0,heigh:0)
  */
 func TestAvlTree_SingleRotateRight(t *testing.T) {
-	at := toTestLL(rrTest2)
+	at := toTestAvlTree(rrTest2)
 	fmt.Println("before")
 	at.show(at.root)
 	at.SingleRotateRight(&at.root)
@@ -140,7 +140,7 @@ func TestAvlTree_SingleRotateRight(t *testing.T) {
 |-----------------------------20(freq:0,heigh:0)
 */
 func TestAvlTree_DoubleRotateLR(t *testing.T) {
-	at := toTestLL(lrTest2)
+	at := toTestAvlTree(lrTest2)
 	fmt.Println("before")
 	at.show(at.root)
 	at.DoubleRotateLR(&at.root)
@@ -181,9 +181,32 @@ func TestAvlTree_DoubleRotateLR(t *testing.T) {
 |-----------------------------23(freq:0,heigh:0)
 */
 func TestAvlTree_DoubleRotateRL(t *testing.T) {
-	at := toTestLL(rlTest2)
+	at := toTestAvlTree(rlTest2)
 	fmt.Println("before")
 	at.show(at.root)
 
 
+}
+
+func TestAvlTree_Find(t *testing.T) {
+	at := toTestAvlTree(rlTest2)
+	at.show(at.root)
+
+	rt := at.Find(20)
+	fmt.Println(*rt)
+}
+
+func TestAvlTree_Delete(t *testing.T) {
+	avlTree := toTestAvlTree(rlTest2)
+	avlTree.show(avlTree.root)
+
+	avlTree.Delete(20)
+	avlTree.show(avlTree.root)
+}
+
+func TestAvlTree_InsubTree(t *testing.T) {
+	avlTree := toTestAvlTree(rlTest2)
+	avlTree.show(avlTree.root)
+
+	avlTree.InsubTree()
 }

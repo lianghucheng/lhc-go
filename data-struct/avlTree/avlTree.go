@@ -145,8 +145,8 @@ func (ctx *avlTree)find(node *avlTreeNode, data int)*avlTreeNode{
 	}
 }
 
-func (ctx *avlTree)Find(data int) {
-	ctx.find(ctx.root, data)
+func (ctx *avlTree)Find(data int) *avlTreeNode {
+	return ctx.find(ctx.root, data)
 }
 
 func (ctx *avlTree)delete(node **avlTreeNode, data int) {
