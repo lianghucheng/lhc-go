@@ -39,7 +39,7 @@ func (ctx *avlTree)SingleRotateLeft(node **avlTreeNode) {
 	oldRoot.left = newRoot.right
 	newRoot.right = oldRoot
 	oldRoot.height = ctx.max(ctx.getNodeHeight(oldRoot.left), ctx.getNodeHeight(oldRoot.right))+ 1
-	newRoot.height = ctx.max(ctx.getNodeHeight(newRoot.left), oldRoot.height)
+	newRoot.height = ctx.max(ctx.getNodeHeight(newRoot.left), oldRoot.height) + 1
 	*rootPtr = newRoot
 }
 
@@ -49,8 +49,8 @@ func (ctx *avlTree)SingleRotateRight(node **avlTreeNode) {
 	newRoot := oldRoot.right
 	oldRoot.right = newRoot.left
 	newRoot.left = oldRoot
-	oldRoot.height = ctx.max(ctx.getNodeHeight(oldRoot.left), ctx.getNodeHeight(oldRoot.right))
-	newRoot.height = ctx.max(oldRoot.height, ctx.getNodeHeight(newRoot.right))
+	oldRoot.height = ctx.max(ctx.getNodeHeight(oldRoot.left), ctx.getNodeHeight(oldRoot.right)) + 1
+	newRoot.height = ctx.max(oldRoot.height, ctx.getNodeHeight(newRoot.right)) + 1
 	*rootPtr = newRoot
 }
 
